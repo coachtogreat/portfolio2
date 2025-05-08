@@ -11,20 +11,21 @@ const About = () => {
         <Image src='/images/hero.png' alt='Hero' width={818} height={459} />
       </div>
       <div className='custom-container flex flex-wrap items-start gap-6 py-5 md:gap-12 md:py-20'>
-        <div className='flex-[2.3] basis-85'>
-          <h2 className='display-sm-bold md:display-lg-bold text-neutral-25 mt-0'>
+        <div className='flex-[1.5] basis-80'>
+          <h2 className='text-neutral-25 mt-0 pt-2 text-3xl font-extrabold'>
             Who am I?
           </h2>
         </div>
-        <div className='flex-[7.7] basis-85'>
+        <div className='flex-[8.5] basis-80'>
           <p className='text-sm-regular md:text-md-regular mt-4'>
             Hi, I am Alex, a Front-End Developer & Web Programming Instructor
-            based in Jakarta. With over 3 years of experience, I specialize in
-            crafting interactive, responsive, and user-friendly websites that
-            deliver exceptional digital experiences. My expertise spans across
-            various industries, including e-commerce, education, and SaaS. I am
-            proficient in modern front-end technologies, clean coding practices,
-            and performance optimization.
+            based in Jakarta. With over{' '}
+            <span className='font-bold'>3 years of experiences</span>, I
+            specialize in crafting interactive, responsive, and user-friendly
+            websites that deliver exceptional digital experiences. My expertise
+            spans across various industries, including e-commerce, education,
+            and SaaS. I am proficient in modern front-end technologies, clean
+            coding practices, and performance optimization.
           </p>
         </div>
       </div>

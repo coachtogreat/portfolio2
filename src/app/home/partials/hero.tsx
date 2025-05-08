@@ -7,22 +7,22 @@ const Hero = () => {
   return (
     <section
       id='hero'
-      className='custom-container md: flex flex-wrap items-center justify-center gap-7 gap-10 overflow-hidden pt-28'
+      className='custom-container md: flex flex-wrap items-center justify-center gap-10 overflow-hidden pt-28'
     >
       <Button variant='outline'>Alex&apos;s Profile</Button>
       <div className='space-y-6'>
         <h1 className='text-center text-4xl font-bold'>
           I am a{' '}
-          <span className='from-secondary-300 to-primary-300 bg-gradient-to-r bg-clip-text text-transparent'>
+          <span className='bg-gradient-to-r from-[#dc49ab] to-[#8746EB] bg-clip-text text-transparent'>
             Front-End Developer
           </span>
           <br />& Web Programming Instructor
         </h1>
-        <p className='text-center text-lg'>
+        <p className='text-md mx-auto max-w-[930px] text-justify font-normal'>
           Hi, I&apos;m Alex, a passionate web developer with over 3 years of
-          experience in creating responsive websites. I also teach <br />{' '}
-          aspiring developers to master modern web programming and bring their
-          ideas to life
+          experiences in creating responsive websites. I also teach aspiring
+          developers to master modern web programming and bring their ideas to
+          life.
         </p>
       </div>
       <div>

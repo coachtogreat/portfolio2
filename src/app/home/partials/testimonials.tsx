@@ -17,7 +17,7 @@ const Testimonials = () => {
       <div className='custom-container relative flex flex-col gap-8'>
         {/* First Row */}
         <div className='w-full overflow-hidden mix-blend-luminosity'>
-          <Marquee className='py-4 [--duration:120s]'>
+          <Marquee className='max-w-[calc(100%+80px)] py-4 [--duration:120s] md:max-w-[calc(100%+160px)]'>
             {testimonialsData
               .filter((_, index) => index % 2 === 0)
               .map((testimonial, index) => (
@@ -34,7 +34,7 @@ const Testimonials = () => {
 
         {/* Second Row */}
         <div className='w-full overflow-hidden mix-blend-luminosity'>
-          <Marquee className='py-4 [--duration:120s]'>
+          <Marquee className='max-w-[calc(100%+80px)] py-4 [--duration:120s] md:max-w-[calc(100%+160px)]'>
             {testimonialsData
               .filter((_, index) => index % 2 !== 0)
               .map((testimonial, index) => (

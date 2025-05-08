@@ -17,11 +17,13 @@ const FAQ = () => {
       subtitle='Find answers to some of the frequently asked question'
       id='faq'
     >
-      <Accordion type='single' collapsible className='max-w-295'>
+      <Accordion type='single' collapsible className='w-full'>
         {FAQData.map((item, index) => (
           <AccordionItem key={index} value={index.toString()}>
             <AccordionTrigger>{item.title}</AccordionTrigger>
-            <AccordionContent>{item.description}</AccordionContent>
+            <AccordionContent className='w-full text-white'>
+              {item.description}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

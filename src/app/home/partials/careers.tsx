@@ -62,7 +62,7 @@ const Career: React.FC<CareerProps> = ({
             />
           )}
           <motion.div
-            className='absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-4 border-green-500 bg-white'
+            className='absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-4 border-primary-100 bg-gradient-to-br from-[#8746eb] to-[#dc49ab]'
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{

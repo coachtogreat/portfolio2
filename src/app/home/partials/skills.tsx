@@ -10,10 +10,10 @@ const Skills = () => {
   const skillPositions = [
     { top: 100, left: null, right: 75 },
     { top: 200, left: null, right: 200 },
-    { top: 350, left: null, right: 150 },
+    { top: 235, left: null, right: 150 },
     { top: 70, left: 200, right: null },
-    { top: 230, left: 90, right: null },
-    { top: 400, left: 160, right: null },
+    { top: 155, left: 90, right: null },
+    { top: 300, left: 160, right: null },
   ];
 
   return (
@@ -27,7 +27,7 @@ const Skills = () => {
           {/* Skills icons section */}
           <div
             className='flex-start relative flex-[4.7] basis-80'
-            style={{ height: 'clamp(21.25rem, 52.73vw, 39.81rem)' }}
+            style={{ height: 'clamp(10rem, 40vw, 25rem)' }}
           >
             {skillsData.map((skill, index) => {
               const position = skillPositions[index];
@@ -38,14 +38,14 @@ const Skills = () => {
                 >
                   <motion.div
                     animate={{
-                      rotate: [0, 360],
                       x: [0, 50, 0, -50, 0],
-                      y: [0, -50, 0, 50, 0],
+                      y: [0, -25, 0, -25, 0],
                     }}
                     transition={{
-                      duration: 10,
+                      duration: Math.random() * 5 + 5,
                       repeat: Infinity,
                       ease: 'linear',
+                      delay: index * 0.5,
                     }}
                     className='mb-4'
                   >

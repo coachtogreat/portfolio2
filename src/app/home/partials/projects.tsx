@@ -66,13 +66,13 @@ const Card: React.FC<CardProps> = ({
       <h4 className='text-lg-semibold text-neutral-25 mt-4'>{name}</h4>
       <p className='text-md-regular mt-2 text-white'>{description}</p>
       <div className='mt-4 flex gap-2'>
-        <button className='rounded-lg border-2 border-blue-600 px-4 py-2 text-blue-600 transition-colors hover:bg-blue-50'>
+        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
           {skill1}
         </button>
-        <button className='rounded-lg border-2 border-blue-600 px-4 py-2 text-blue-600 transition-colors hover:bg-blue-50'>
+        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
           {skill2}
         </button>
-        <button className='rounded-lg border-2 border-blue-600 px-4 py-2 text-blue-600 transition-colors hover:bg-blue-50'>
+        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
           {skill3}
         </button>
       </div>

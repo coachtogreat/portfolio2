@@ -78,7 +78,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      <Section id='contact' title='' subtitle=''>
+      <Section id='contacts' title='' subtitle=''>
         <div className='flex flex-col items-center justify-center gap-10 md:flex-row'>
           <div className='flex-1 text-center md:text-left'>
             <h2 className='mb-4 text-3xl font-bold'>Contact Me</h2>
@@ -89,7 +89,7 @@ const ContactForm = () => {
           <div className='flex-1'>
             <Form {...form}>
               <form
-                className='mx-auto max-w-180 space-y-5'
+                className='mx-auto w-[500px] space-y-5'
                 onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField

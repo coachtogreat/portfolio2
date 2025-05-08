@@ -56,8 +56,11 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <Button asChild className='hidden lg:flex'>
-          <Link href='#contact'>Hire me</Link>
+        <Button asChild className='hidden flex-row items-center gap-2 lg:flex'>
+          <div className='flex items-center gap-2'>
+            <Image src='/icons/mail.png' alt='mail' width={30} height={30} />
+            <Link href='#contacts'>Hire me</Link>
+          </div>
         </Button>
 
         <Sheet>

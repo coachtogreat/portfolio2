@@ -79,17 +79,17 @@ const ContactForm = () => {
   return (
     <div>
       <Section id='contacts' title='' subtitle=''>
-        <div className='flex flex-col items-center justify-center gap-10 md:flex-row'>
-          <div className='flex-1 text-center md:text-left'>
-            <h2 className='mb-4 text-3xl font-bold'>Contact Me</h2>
-            <p className='text-muted-foreground text-lg'>
+        <div className='flex flex-col items-center justify-center gap-8 md:flex-row'>
+          <div className='text-center md:text-left'>
+            <h2 className='mb-4 text-2xl md:text-3xl font-bold'>Contact Me</h2>
+            <p className='text-muted-foreground text-base md:text-lg'>
               Feel free to drop a message for any inquiries or collaborations.
             </p>
           </div>
-          <div className='flex-1'>
+          <div className='w-full md:w-1/2'>
             <Form {...form}>
               <form
-                className='mx-auto w-[500px] space-y-5'
+                className='w-full space-y-4'
                 onSubmit={form.handleSubmit(onSubmit)}
               >
                 <FormField
@@ -137,7 +137,11 @@ const ContactForm = () => {
                     </FormItem>
                   )}
                 />
-                <Button type='submit' disabled={loading} className='w-full'>
+                <Button
+                  type='submit'
+                  disabled={loading}
+                  className='w-full'
+                >
                   {loading ? <ClipLoader size={20} /> : 'Send'}
                 </Button>
               </form>

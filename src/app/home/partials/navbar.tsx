@@ -37,7 +37,7 @@ const Navbar = () => {
       }}
       className='fixed top-0 z-50 w-full'
     >
-      <div className='flex-between custom-container h-16 md:h-21'>
+      <div className='flex-between custom-container h-16 md:h-21 md:pt-5.5 md:pr-28.5 md:pb-5.5 md:pl-35'>
         <Image
           src='/icons/logo.svg'
           alt='logo'
@@ -56,10 +56,13 @@ const Navbar = () => {
             ))}
           </ul>
         </nav>
-        <Button asChild className='hidden flex-row items-center gap-2 lg:flex'>
-          <div className='flex items-center gap-2'>
+        <Button
+          asChild
+          className='hidden w-[180px] flex-row items-center gap-2 lg:flex'
+        >
+          <div className='flex items-center gap-1.5'>
             <Image src='/icons/mail.png' alt='mail' width={30} height={30} />
-            <Link href='#contacts'>Hire me</Link>
+            <Link href='#contacts'>Hire&nbsp;me</Link>
           </div>
         </Button>
 

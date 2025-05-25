@@ -16,6 +16,7 @@ const FAQ = () => {
       title='Frequently Asked Question'
       subtitle='Find answers to some of the frequently asked question'
       id='faq'
+      className='w-full text-display-2xl'
     >
       <Accordion type='single' collapsible className='w-full'>
         {FAQData.map((item, index) => (

@@ -8,11 +8,11 @@ import { projectsData } from '@/constants/projects-data';
 
 const Projects = () => {
   return (
-    <Section id='projects' title='' subtitle='' bg-red-500>
+    <Section id='projects' title='' subtitle='' className=''>
       <Cards>
-        {projectsData.map((project) => (
+        {projectsData.map((project, index) => (
           <Card
-            key={project.name}
+            key={`${project.name}-${index}`}
             imageSrc={project.imageSrc}
             name={project.name}
             description={project.description}
@@ -34,7 +34,7 @@ type CardsProps = {
 };
 
 const Cards: React.FC<CardsProps> = ({ children }) => {
-  return <div className='flex flex-wrap gap-6 md:gap-5'>{children}</div>;
+  return <div className='grid gap-6 md:grid-cols-3 md:gap-8'>{children}</div>;
 };
 
 type CardProps = {
@@ -45,6 +45,7 @@ type CardProps = {
   skill2: string;
   skill3: string;
   link: string;
+  className?: string;
 };
 
 const Card: React.FC<CardProps> = ({
@@ -57,31 +58,45 @@ const Card: React.FC<CardProps> = ({
   link,
 }) => {
   return (
-    <div className='flex-1 basis-70'>
+    <div className='w-full'>
       <Image
         src={imageSrc}
         alt={name}
         className='aspect-square rounded-2xl object-cover md:rounded-4xl'
       />
-      <h4 className='text-lg-semibold text-neutral-25 mt-4'>{name}</h4>
-      <p className='text-md-regular mt-2 text-white'>{description}</p>
+      <h4 className='text-lg-bold md:text-xl-bold mt-4 text-neutral-100'>
+        {name}
+      </h4>
+      <p className='text-sm-regular md:text-md-regular mt-2 text-neutral-200'>
+        {description}
+      </p>
       <div className='mt-4 flex gap-2'>
-        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
+        <button className='text-sm-regular md:text-md-regular h-10 rounded-lg border-1 border-white px-3 py-1.5 text-white transition-all hover:bg-gradient-to-r hover:from-[#8746eb] hover:to-[#dc49ab] hover:bg-clip-text hover:text-transparent'>
           {skill1}
         </button>
-        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
+        <button className='text-sm-regular md:text-md-regular h-10 rounded-lg border-1 border-white px-3 py-1.5 text-white transition-all hover:bg-gradient-to-r hover:from-[#8746eb] hover:to-[#dc49ab] hover:bg-clip-text hover:text-transparent'>
           {skill2}
         </button>
-        <button className='rounded-lg border-2 border-white px-4 py-2 text-white transition-colors hover:bg-blue-50'>
+        <button className='text-sm-regular md:text-md-regular h-10 rounded-lg border-1 border-white px-3 py-1.5 text-white transition-all hover:bg-gradient-to-r hover:from-[#8746eb] hover:to-[#dc49ab] hover:bg-clip-text hover:text-transparent'>
           {skill3}
         </button>
       </div>
       <div className='mt-4'>
         <a
           href={link}
-          className='text-blue-600 transition-colors hover:text-blue-700'
+          className='text-md-bold md:text-lg-bold flex items-center gap-2 rounded-lg bg-transparent bg-gradient-to-r from-[#8746eb] to-[#dc49ab] bg-clip-text py-2 text-transparent transition-all hover:opacity-90'
         >
           Visit Project
+          <div className='relative inline-block'>
+            <Image
+              src='/images/png/panah.png'
+              alt='arrow right'
+              width={16}
+              height={16}
+              className='h-4 w-4'
+            />
+            <div className='absolute inset-0 bg-gradient-to-r from-[#8746eb] to-[#dc49ab] opacity-0 transition-opacity hover:opacity-100'></div>
+          </div>
         </a>
       </div>
     </div>

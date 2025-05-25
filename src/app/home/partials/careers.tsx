@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 
 import { careerData } from '@/constants/careers-data';
@@ -33,10 +34,7 @@ const Career: React.FC<CareerProps> = ({
       viewport={{ once: false }}
       className='w-full'
     >
-      <div className='grid grid-cols-[80px_80px_1fr] gap-4'>
-        {/* Empty Column */}
-        <div className='w-8' />
-
+      <div className='grid grid-cols-[80px_1fr] gap-4'>
         {/* Timeline Column */}
         <motion.div
           className='relative'
@@ -62,7 +60,7 @@ const Career: React.FC<CareerProps> = ({
             />
           )}
           <motion.div
-            className='absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-4 border-primary-100 bg-gradient-to-br from-[#8746eb] to-[#dc49ab]'
+            className='border-primary-100 absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-4 bg-gradient-to-br from-[#8746eb] to-[#dc49ab]'
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{
@@ -82,14 +80,36 @@ const Career: React.FC<CareerProps> = ({
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <h1 className='text-2xl font-bold'>{title}</h1>
+          <h2 className='text-display-md md:text-display-xs font-extrabold'>
+            {title}
+          </h2>
           <div className='flex items-center gap-4'>
-            <span className='text-xl font-semibold text-white'>{company}</span>
-            <span className='text-white'>•</span>
-            <span className='text-white'>{description}</span>
+            <div className='flex items-center gap-2'>
+              <Image
+                src='/images/jpg/building.jpg'
+                alt='office'
+                width={30}
+                height={30}
+                className='object-contain'
+              />
+              <span className='text-sm-regular md:text-md-regular text-white'>
+                {company}
+              </span>
+            </div>
+            <span className='text-sm-regular md:text-md text-white'>•</span>
+            <Image
+              src='/images/jpg/date.jpg'
+              alt='durasi'
+              width={30}
+              height={30}
+              className='object-contain'
+            />
+            <span className='text-sm-regular md:text-md regular text-white'>
+              {description}
+            </span>
           </div>
           {experience && (
-            <ul className='list-inside list-disc space-y-1'>
+            <ul className='text-sm-regular md:text-md-regular list-inside list-disc space-y-1'>
               {experience.map((exp, index) => (
                 <motion.li
                   key={index}
@@ -108,12 +128,13 @@ const Career: React.FC<CareerProps> = ({
   );
 };
 
-const Careers = () => {
+const Careers: React.FC = () => {
   return (
     <Section
       title='Career Journey'
       subtitle='A visual timeline of key milestones and experiences from over the years.'
       id='careers'
+      className=''
     >
       <div className='w-full max-w-[1200px]'>
         {careerData.map((career, index) => (

@@ -14,17 +14,21 @@ function Accordion({
 
 function AccordionItem({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Item>) {
   return (
     <AccordionPrimitive.Item
       data-slot='accordion-item'
-      className={cn(
-        'mb-4 rounded-2xl bg-neutral-900 p-4 last:mb-0 md:mb-8 md:rounded-4xl md:p-6',
-        className
-      )}
+      className={cn('mb-4 last:mb-0 md:mb-8', className)}
       {...props}
-    />
+    >
+      <div className='relative rounded-2xl bg-gradient-to-r from-[#dc49a6] to-[#8746eb] p-[1px] md:rounded-4xl'>
+        <div className='rounded-[inherit] bg-black p-4 text-white md:p-6'>
+          {children}
+        </div>
+      </div>
+    </AccordionPrimitive.Item>
   );
 }
 
@@ -38,7 +42,8 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot='accordion-trigger'
         className={cn(
-          '!text-md-semibold md:text-lg-semibold text-neutral-25 hover:text-primary-200 data-[state=open]:text-primary-200 group/trigger flex flex-1 cursor-pointer items-start justify-between gap-4 text-left transition-all',
+          'group/trigger flex flex-1 cursor-pointer items-start justify-between gap-4 text-left transition-all',
+          '!text-md-semibold md:text-lg-semibold hover:text-primary-200 text-white',
           className
         )}
         {...props}
@@ -46,11 +51,11 @@ function AccordionTrigger({
         <div className='flex-1 text-left'>{children}</div>
         <div className='shrink-0'>
           <PlusIcon
-            color='#fdfdfd'
+            color='#ffffff'
             className='group-data-[state=open]/trigger:hidden'
           />
           <MinusIcon
-            color='#fdfdfd'
+            color='#ffffff'
             className='group-data-[state=closed]/trigger:hidden'
           />
         </div>
@@ -67,12 +72,13 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot='accordion-content'
-      className='data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down text-sm-regular overflow-hidden'
+      className={cn(
+        'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden',
+        className
+      )}
       {...props}
     >
-      <div className={cn('text-sm-regular mt-4 text-neutral-400', className)}>
-        {children}
-      </div>
+      <div className='text-sm-regular mt-4 text-white'>{children}</div>
     </AccordionPrimitive.Content>
   );
 }

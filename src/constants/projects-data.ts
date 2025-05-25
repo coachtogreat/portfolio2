@@ -20,7 +20,7 @@ type Project = {
 export const projectsData: Project[] = [
   {
     imageSrc: project1Src,
-    name: 'Landing Page',
+    name: 'Community Event Landing',
     description:
       'The BIGGEST community event in Indonesia, which will run for 30 full days with the theme.',
     skill1: 'React',
@@ -30,7 +30,7 @@ export const projectsData: Project[] = [
   },
   {
     imageSrc: project2Src,
-    name: 'Landing Page',
+    name: 'Hospital Landing Page',
     description:
       'Private hospital in the city of padang that provides special surgical services',
     skill1: 'React',
@@ -40,7 +40,7 @@ export const projectsData: Project[] = [
   },
   {
     imageSrc: project3Src,
-    name: 'Landing Page',
+    name: 'API Services Landing',
     description:
       'Product engaged in WhatsApp API services and other information technology services.',
     skill1: 'React',

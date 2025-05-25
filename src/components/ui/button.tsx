@@ -10,9 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-gradient-to-r from-[#8746eb] to-[#dc49ab] text-sm-medium text-neutral-25 rounded-full hover:shadow-[0_0_17px_rgba(135,70,235,0.6)]',
+          'bg-gradient-to-r from-[#dc49ab] to-[#8746eb] text-sm-medium text-neutral-25 rounded-full hover:shadow-[0_0_17px_rgba(135,70,235,0.6)]',
         outline:
-          'border border-neutral-800 rounded-full hover:border-neutral-700',
+          'bg-black text-white border-gradient-to-r from-[#dc49ab] to-[#8746eb] rounded-full hover:border-gradient-to-r hover:from-[#dc49ab]/70 hover:to-[#8746eb]/70',
       },
       size: {
         default: 'h-11 px-14.5',

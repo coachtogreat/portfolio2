@@ -1,0 +1,13 @@
+.gradient-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(to right, #dc49ab, #8746eb);
+  background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-border:hover {
+  background-position: 0% 0%, 100% 0%;
+  transition: background-position 0.3s ease;
+}
